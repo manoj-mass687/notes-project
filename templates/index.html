@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Notes Application</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>📝 Notes Application</h1>
+
+        <!-- ======================
+             STATS
+        ======================= -->
+
+        <div id="stats"
+             class="stats">
+
+            <div class="stat-card">
+
+                <h2>0</h2>
+
+                <p>📝 Total Notes</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2>0</h2>
+
+                <p>📌 Pinned Notes</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2>0</h2>
+
+                <p>🔤 Characters</p>
+
+            </div>
+
+        </div>
+
+        <!-- ======================
+             SEARCH
+        ======================= -->
+
+        <input
+            type="text"
+            id="search"
+            placeholder="🔍 Search Notes..."
+            onkeyup="searchNotes()">
+
+        <!-- ======================
+             NOTE FORM
+        ======================= -->
+
+        <input
+            type="text"
+            id="title"
+            placeholder="📌 Enter Note Title">
+
+        <textarea
+            id="content"
+            placeholder="✍️ Write your note here..."></textarea>
+
+        <div id="charCount">
+
+            Characters: 0
+
+        </div>
+
+        <button onclick="addNote()">
+
+            Save Note
+
+        </button>
+
+        <!-- ======================
+             NOTES GRID
+        ======================= -->
+
+        <div id="notes">
+
+        </div>
+
+    </div>
+
+    <!-- ======================
+         GLASS MODAL
+    ======================= -->
+
+    <div id="noteModal"
+         class="modal">
+
+        <div class="modal-content">
+
+            <span class="close"
+                  onclick="closeModal()">
+
+                &times;
+
+            </span>
+
+            <h2 id="modalTitle">
+
+                Note Title
+
+            </h2>
+
+            <div id="modalContent">
+
+                Note Content
+
+            </div>
+
+            <div id="modalActions"
+                 class="modal-actions">
+
+                <!-- JS Buttons -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static',
+                            filename='script.js') }}">
+
+    </script>
+
+</body>
+
+</html>
